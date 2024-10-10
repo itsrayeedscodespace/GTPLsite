@@ -1,0 +1,288 @@
+/*=============== ABOUT PAGE STYLES ===============*/
+
+/* General Styles */
+
+.container {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+  
+  .section__title {
+    font-size: 2.5rem;
+    color: var(--title-color);
+    text-align: center;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+  
+  /* Founder Section */
+  .founder {
+    padding: 6rem 0 3rem;
+    background: linear-gradient(to bottom, var(--body-color), var(--first-color-alt));
+  }
+  
+  .founder__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .founder__image {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    border: 5px solid var(--first-color);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  .founder__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .founder__name {
+    font-size: 2rem;
+    color: var(--title-color);
+    margin-bottom: 0.5rem;
+  }
+  
+  .founder__title {
+    font-size: 1.1rem;
+    color: var(--text-color);
+  }
+  
+  /* Who We Are Section */
+  .who-we-are {
+    padding: 5rem 0;
+    background-color: var(--body-color);
+  }
+  
+  .who-we-are__description {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    color: var(--text-color);
+  }
+  
+  /* Our Teams Section */
+  /*=============== OUR TEAMS SECTION STYLES ===============*/
+
+/* Our Teams Section */
+/*=============== OUR TEAMS SECTION STYLES ===============*/
+
+/* Our Teams Section */
+.our-teams {
+  padding: 5rem 0; /* Add vertical padding */
+  background: linear-gradient(to bottom, var(--body-color), var(--first-color-alt)); /* Background gradient */
+}
+
+.team {
+  background-color: rgba(255, 255, 255, 0.1); /* Slightly transparent white background */
+  border-radius: 1rem; /* Rounded corners */
+  padding: 2rem; /* Inner padding */
+  margin-bottom: 3rem; /* Space below each team section */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.team:hover {
+  transform: translateY(-10px); /* Lift effect on hover */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Shadow effect on hover */
+}
+
+.team__title {
+  font-size: 1.5rem; /* Title font size */
+  color: var(--title-color); /* Title color */
+  margin-bottom: 1.5rem; /* Space below title */
+  text-align: center; /* Centered title */
+  text-transform: uppercase; /* Uppercase text */
+  letter-spacing: 1px; /* Slight letter spacing */
+}
+
+.team__content {
+  display: flex; /* Flexbox layout */
+  align-items: center; /* Center align items vertically */
+  gap: 2rem; /* Space between image and description */
+}
+
+.team__lead {
+  display: flex; /* Flexbox for lead section */
+  flex-direction: column; /* Column layout */
+  align-items: center; /* Center align items */
+}
+
+.team__lead img {
+  width: 120px; /* Image width */
+  height: 120px; /* Image height */
+  border-radius: 50%; /* Circular images */
+  object-fit: cover; /* Cover the image area */
+  margin-bottom: 0.5rem; /* Space below image */
+  border: 3px solid var(--second-color); /* Border color */
+}
+
+.team__lead-name {
+  font-size: 1rem; /* Name font size */
+  color: var(--title-color); /* Name color */
+  text-align: center; /* Centered name */
+}
+
+.team__description {
+  flex: 1; /* Take remaining space */
+  font-size: 1rem; /* Description font size */
+  line-height: 1.6; /* Line height for readability */
+  color: var(--text-color); /* Description color */
+}
+
+/* Second Image for Structures Team */
+.team__additional-image {
+  display: flex; /* Flexbox for alignment */
+  flex-direction: column; /* Stack vertically */
+  align-items: right; /* Center the content */
+  margin-top: 15px; /* Space above the second image */
+}
+
+.team__additional-image img {
+  width: 120px; /* Set width for circular image */
+  height: 120px; /* Set height for circular image */
+  border-radius: 50%; /* Make image circular */
+  object-fit: cover; /* Cover the image area */
+  border: 3px solid var(--second-color); /* Border color */
+  margin-top: 3px; /* Space above the image */
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .team__content {
+      flex-direction: column; /* Stack items vertically on small screens */
+      text-align: center; /* Center text on small screens */
+  }
+
+  .team__lead {
+      margin-bottom: 1rem; /* Space below lead section */
+  }
+}
+
+.team__additional-name {
+  font-size: 1rem; /* Set font size */
+  color: var(--title-color); /* Color for the name */
+  text-align: center; /* Center align text */
+  margin-top: 0.5rem; /* Space above the name */
+}
+
+
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .founder,
+  .who-we-are,
+  .team {
+    animation: fadeIn 1s ease-out;
+  }
+  
+  /* Scroll Reveal */
+  .scroll-reveal {
+    opacity: 0;
+    transition: opacity 0.5s, transform 0.5s;
+  }
+  
+  .scroll-reveal.revealed {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .who-we-are {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 20px;
+    background-color: #000; /* Background color */
+    color: #fff; /* Text color */
+}
+
+.who-we-are__container {
+    flex: 1; /* Takes up available space */
+    padding: 20px; /* Padding around the content */
+}
+
+.who-we-are__description {
+    font-size: 1.1em; /* Description text size */
+    margin-bottom: 20px; /* Space below the description */
+}
+
+h3 {
+    font-size: 1.5em; /* Subheading size */
+    margin: 15px 0; /* Space above and below subheadings */
+}
+
+
+.who-we-are li {
+    margin-bottom: 10px; /* Space below list items */
+}
+
+@media (max-width: 768px) {
+    .who-we-are {
+        flex-direction: column; /* Stack items vertically on small screens */
+    }
+
+    .who-we-are__container {
+        text-align: center; /* Center text on small screens */
+    }
+
+    img {
+        width: 100%; /* Make image responsive */
+        height: auto; /* Maintain aspect ratio */
+        margin-top: 20px; /* Space above image */
+    }
+}
+
+/* Add this class for the image */
+.who-we-are__image {
+    flex: 1; /* Takes up available space */
+    max-width: 400px; /* Limit max width of the image */
+    margin-left: 20px; /* Space between text and image */
+}
+
+.who-we-are__image img {
+    width: 100%; /* Make the image responsive */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.who-we-are {
+  padding: 80px 40px; /* Increase top and bottom padding for more spacing */
+}
+
+.who-we-are__container {
+  margin: 0 auto; /* Center the container */
+  max-width: 800px; /* Limit the width of the container */
+}
+
+
+p {
+  margin-bottom: 40px; /* Increase space below paragraphs */
+  line-height: 1.6; /* Increase line height for better readability */
+}
+
+
+.who-we-are li {
+  margin-bottom: 30px; /* Increase space below list items */
+  line-height: 1.5; /* Increase line height for list items */
+}
+
+
