@@ -56,3 +56,25 @@ gsap.from('.home__cloud-1', 1.5, {opacity: 0, y: 200, delay: 1.2})
 gsap.from('.home__cloud-2', 1.5, {opacity: 0, x: 200, delay: 1.3})
 gsap.from('.home__content', 1.5, {opacity: 0, y: -100, delay: 1.4})
 gsap.from('.home__title img', 1.5, {opacity: 0, x: 100, delay: 1.6})
+
+// Wait until the DOM is fully loaded
+document.addEventListener("DOMContentLoaded", function() {
+  const header = document.getElementById('header');
+  const firstSection = document.querySelector('.home');
+
+  // Function to handle scroll event
+  const handleScroll = () => {
+    // Get the height of the first section
+    const firstSectionHeight = firstSection.offsetHeight;
+
+    // Add the class if the user has scrolled past the first section
+    if (window.scrollY > firstSectionHeight) {
+      header.classList.add('navbar--scrolled');
+    } else {
+      header.classList.remove('navbar--scrolled');
+    }
+  };
+
+  // Attach the scroll event listener to the window
+  window.addEventListener('scroll', handleScroll);
+});

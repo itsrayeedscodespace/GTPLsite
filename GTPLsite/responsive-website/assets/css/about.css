@@ -1,6 +1,7 @@
 /*=============== ABOUT PAGE STYLES ===============*/
 
 /* General Styles */
+
 .container {
     max-width: 1120px;
     margin: 0 auto;
@@ -283,3 +284,5 @@ p {
   margin-bottom: 30px; /* Increase space below list items */
   line-height: 1.5; /* Increase line height for list items */
 }
+
+
