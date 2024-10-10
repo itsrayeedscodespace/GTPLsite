@@ -197,3 +197,99 @@ button:hover {
         background: var(--light-brown); 
         color: #FFF;
     }
+
+
+    .contact-form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      
+      form {
+        background-color: #fff;
+        padding: 2rem;
+        border-radius: 8px;
+        box-shadow: 0 0 16px rgba(0, 0, 0, 0.1);
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 1rem;
+        max-width: 900px;
+        width: 100%;
+      }
+      
+      /* Form Group */
+      .form-group {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+      }
+      
+      /* Icons in input fields */
+      form label i {
+        position: absolute;
+        top: 50%;
+        left: 10px;
+        transform: translateY(-50%);
+        font-size: 1.2rem;
+        color: #666;
+      }
+      
+      /* Input fields */
+      input[type="text"], input[type="email"], textarea {
+        width: 100%;
+        padding: 1rem 1.5rem;
+        padding-left: 40px; /* Space for icon */
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        background-color: #fff;
+        color: #333;
+        outline: none;
+      }
+      
+      textarea {
+        height: 100px;
+      }
+      
+      input[type="text"]::placeholder, 
+      input[type="email"]::placeholder, 
+      textarea::placeholder {
+        color: #aaa;
+      }
+      
+      input:focus, textarea:focus {
+        border-color: #999;
+      }
+      
+      /* Send message button */
+      .send-message-btn {
+        grid-column: span 2;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        padding: 1rem 3rem;
+        border: 2px solid #000;
+        border-radius: 50px;
+        background: linear-gradient(to right, #ff9900, #5d3f96);
+        color: #333;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-align: center;
+      }
+      
+      .send-message-btn:hover {
+        background: linear-gradient(to right, #5d3f96, #ff9900);
+        color: #fff;
+      }
+      
+      .send-message-btn i {
+        margin-left: 10px;
+      }
+      
+      /* Adjustments for responsiveness */
+      @media screen and (max-width: 768px) {
+        form {
+          grid-template-columns: 1fr;
+        }
+      }

@@ -20,7 +20,7 @@
       <!--==================== HEADER ====================-->
       <header class="header" id="header">
          <nav class="nav container">
-            <a href="#" class="nav__logo">
+            <a href="index.html" class="nav__logo">
                <img src="assets/img/logo.png" alt="GTPL">
             </a>
 
@@ -66,17 +66,56 @@
             <h1>CONTACT</h1>
             <p>Want to sponsor us? Want to join us? Have a technical question? Just want to say hi? Get in touch with us with the form below or through social media!</p>
             <div class="social-icons">
-                <a href="#" class="contact__social"><i class="ri-youtube-fill"></i></a>
-                <a href="#" class="contact__social"><i class="ri-instagram-fill"></i></a>
-                <a href="#" class="contact__social"><i class="ri-twitter-fill"></i></a>
-                <a href="#" class="contact__social"><i class="ri-facebook-fill"></i></a>
-                <a href="#" class="contact__social"><i class="ri-linkedin-fill"></i></a>
+                <a href="mailto:outreach@gtpropulsivelanders.org" class="contact__icons"><i class="ri-mail-fill"></i></a>
+                <a href="https://www.linkedin.com/company/propulsive-landers-georgia-tech" class="contact__icons"><i class="ri-linkedin-fill"></i></a>
+                <a href="https://www.instagram.com/propulsivelandersgt/" class="contact__icons"><i class="ri-instagram-fill"></i></a>
+                <a href="https://www.tiktok.com/@propulsive.landers.gt" class="contact__icons"><i class="ri-tiktok-fill"></i></a>
+                <a href="https://www.youtube.com/spacex" class="contact__icons"><i class="ri-youtube-fill"></i></a>
+                <a href="https://www.flickr.com/photos/spacex/" class="contact__icons"><i class="ri-flickr-fill"></i></a>
             </div>
         </section>
 
         <!-- Contact Form Section -->
-        <section id="contact">
-            <h2 style="text-align: center; color: #151610;">Contact</h2>
+
+        <section class="contact-form">
+            <form action="#" method="POST">
+              <div class="form-group">
+                <label for="name">
+                  <i class="icon-user"></i>
+                  <input type="text" id="name" name="name" placeholder="Name" required>
+                </label>
+              </div>
+          
+              <div class="form-group">
+                <label for="email">
+                  <i class="icon-envelope"></i>
+                  <input type="email" id="email" name="email" placeholder="Email Address" required>
+                </label>
+              </div>
+          
+              <div class="form-group">
+                <label for="subject">
+                  <i class="icon-subject"></i>
+                  <input type="text" id="subject" name="subject" placeholder="Subject" required>
+                </label>
+              </div>
+          
+              <div class="form-group">
+                <label for="message">
+                  <i class="icon-message"></i>
+                  <textarea id="message" name="message" placeholder="Message" required></textarea>
+                </label>
+              </div>
+          
+              <div class="form-group">
+                <button type="submit" class="send-message-btn">
+                  Send Message <i class="icon-arrow"></i>
+                </button>
+              </div>
+            </form>
+          </section>
+          
+        <!-- <section id="contact">
             <div class="contact-icons" style="display: flex; justify-content: center; align-items: center; margin-bottom: 20px;">
                 <a href="https://instagram.com/songsbystorm" target="_blank" style="margin: 0 10px;">
                     <i class="fab fa-instagram" style="font-size: 20px; color: #151610;"></i>
@@ -110,15 +149,43 @@
                 </form>
             </div>
         </section>
-    </main>
+    </main> -->
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer__container container">
-            <p>&copy; 2024 Propulsive Landers @ Georgia Tech. All rights reserved.</p>
+    <!-- Contact Section -->
+<section class="contact section">
+    <div class="contact__container container">
+      <h2 class="section__title">Contact Us</h2>
+      <p class="contact__description">We would love to hear from you! Feel free to reach out with any questions, sponsorship inquiries, or collaborations.</p>
+      <div class="contact__email">
+        <a href="mailto:outreach@gtpropulsivelanders.org">outreach@gtpropulsivelanders.org</a>
+      </div>
+      <div class="contact__content">
+        <div class="contact__location">
+          <h2 class="wheretofind">Where To Find Us</h2>
+          <p>Georgia Institute of Technology</p>
+          <p>North Avenue</p>
+          <p>Atlanta, GA 30332</p>
         </div>
-    </footer>
+        <div class="contact__buttons">
+          <a href="#" class="contact__button">Join The Team</a>
+          <a href="#" class="contact__button">Become A Sponsor</a>
+        </div>
+        <div class="contact__socials">
+          <h2 class="socialcontact">Our Socials</h2>
+          <a href="https://www.linkedin.com/company/propulsive-landers-georgia-tech" class="contact__social">LinkedIn</a>
+          <a href="https://www.instagram.com/propulsivelandersgt/" class="contact__social">Instagram</a>
+          <a href="https://www.tiktok.com/@propulsive.landers.gt" class="contact__social">Tiktok</a>
+          <a href="https://www.youtube.com/spacex" class="contact__social">Youtube</a>
+          <a href="https://www.flickr.com/photos/spacex/" class="contact__social">Flickr</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <script src="main.js"></script>
+    <!--=============== GSAP ===============-->
+    <script src="assets/js/gsap.min.js"></script>
+
+    <!--=============== MAIN JS ===============-->
+    <script src="assets/js/main.js"></script>
 </body>
 </html>
