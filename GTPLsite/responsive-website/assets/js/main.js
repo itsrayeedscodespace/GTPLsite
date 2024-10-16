@@ -19,6 +19,16 @@ if(navClose){
     })
 }
 
+const sliderWrapper = document.querySelector('.sponsor-slider__wrapper');
+const slides = document.querySelectorAll('.sponsor-slider__slide');
+
+// Clone the slides to create a seamless loop
+slides.forEach(slide => {
+  const clone = slide.cloneNode(true);
+  sliderWrapper.appendChild(clone);
+});
+
+
 function revealOnScroll() {
     var reveals = document.querySelectorAll('.scroll-reveal');
     
@@ -78,3 +88,5 @@ document.addEventListener("DOMContentLoaded", function() {
   // Attach the scroll event listener to the window
   window.addEventListener('scroll', handleScroll);
 });
+
+
