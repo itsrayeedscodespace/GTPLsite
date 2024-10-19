@@ -6,17 +6,15 @@
   --header-height: 3.5rem;
 
   /*========== Colors ==========*/
-  /*Color mode HSL(hue, saturation, lightness)*/
-  --first-color: hsl(268, 58%, 48%);
-  --first-color-alt: hsl(268, 28%, 38%);
-  --second-color: hsl(335, 88%, 56%);
-  --second-color-alt: hsl(328, 78%, 38%);
-  --title-color: hsl(0, 0%, 100%);
-  --text-color: hsl(252, 100%, 87%);
-  --body-color: hsl(220, 40%, 20%);;
+  --first-color: #1E3A5F; /* Cool dark blue */
+  --first-color-alt: #2C4B7A; /* Lighter blue */
+  --second-color: #FF914D; /* Soft orange for accents */
+  --second-color-alt: #FF7A32; /* Darker orange for hover effects */
+  --title-color: #FFFFFF; /* White for titles and main text */
+  --text-color: #D9D9D9; /* Light grayish white for general text */
+  --body-color: #F0ECE2; /* Light beige for background */
 
   /*========== Font and typography ==========*/
-  /*.5rem = 8px | 1rem = 16px ...*/
   --body-font: "Montserrat", sans-serif;
   --biggest-font-size: 2rem;
   --normal-font-size: .938rem;
@@ -41,6 +39,7 @@
     --small-font-size: .875rem;
   }
 }
+
 
 /*=============== BASE ===============*/
 * {
@@ -199,14 +198,29 @@ img {
 .home {
   position: relative;
   height: 100vh;
-  background: url('../img/bgimage3.jpg') no-repeat center center/cover;
+  background: url('../img/bgimage7.jpg') no-repeat center center/cover;
+  background-attachment: fixed;
+}
+
+.home::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3); /* Adjust the opacity as needed */
+  z-index: 1;
 }
 
 .home__container {
   padding-top: 7rem;
   display: grid;
   row-gap: 3rem;
+  position: relative;
+  z-index: 2;
 }
+
 
 .home__content {
   text-align: center;
@@ -440,8 +454,13 @@ img {
   text-align: center;
 }
 .about {
-  background-color: hsl(226, 56%, 15%);
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/bgimage11.jpg);
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
 }
+
+
 .section__title {
   font-size: 2rem;
   color: var(--title-color);
@@ -456,31 +475,87 @@ img {
   margin: 0 auto;
 }
 
-/* Sponsors Section */
-.sponsors__tier {
-  margin-bottom: 3rem;
+.sponsors {
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../img/bgimage7.jpg);
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  padding: 10rem 0;
 }
 
-.sponsor__title {
-  font-size: 1.5rem;
+.sponsors__container {
+  max-width: 1400px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.section__title {
+  font-size: 3rem;
   color: var(--text-color);
-  margin-bottom: 1.5rem;
+  margin-bottom: 8rem;
 }
 
-.sponsor__list {
+
+.sponsor-slider {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.sponsor-slider__wrapper {
+  display: flex;
+  animation: scroll 20s linear infinite; /* Continuous scroll animation */
+}
+
+.sponsor-slider__slide {
   display: flex;
   justify-content: center;
-  gap: 2rem;
+  align-items: center;
+  flex: 0 0 auto;
 }
 
-.sponsor__list img {
-  width: 150px;
+.sponsor-slider__slide img {
+  max-width: 150px;
+  height: auto;
   filter: grayscale(10%);
   transition: filter 0.3s ease;
+  margin: 0 10px;
 }
 
-.sponsor__list img:hover {
+.sponsor-slider__slide img:hover {
   filter: none;
+}
+
+/* Keyframe for smooth scrolling */
+@keyframes scroll {
+  0% {
+    transform: translateX(0); /* Start from the first slide */
+  }
+  100% {
+    transform: translateX(-100%); /* Move left by 100% of the slider width */
+  }
+}
+
+
+/* Media Queries for Responsive Slider */
+@media screen and (max-width: 768px) {
+  .sponsor-slider__wrapper {
+    width: 200%; /* Display 2 images at a time */
+  }
+
+  .sponsor-slider__slide {
+    width: 50%; /* Each slide takes up 50% width */
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .sponsor-slider__wrapper {
+    width: 300%; /* Display 3 images at a time */
+  }
+
+  .sponsor-slider__slide {
+    width: 33.33%; /* Each slide takes up 33.33% width */
+  }
 }
 
 /* Contact Section */
@@ -624,13 +699,14 @@ img {
   font-size: var(--biggest-font-size);
   color: var(--title-color);
 }
-
+*/
 .about__description {
   line-height: 150%;
   margin-bottom: 1.5rem;
   color: var(--text-color);
+  font-size: 1.1rem;
 }
-
+/*
 .about__team {
   text-align: center;
 }
@@ -708,7 +784,7 @@ img {
 } */
 
 /* Who We Are Section */
-.about__content {
+/* .about__content {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -722,11 +798,11 @@ img {
 .about__image img {
   max-width: 100%;
   height: auto;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Optional for shadow */
-  width:27rem
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  width:27rem;
+  border-radius: 10px
 }
 
-/* Responsive Layout */
 @media screen and (max-width: 768px) {
   .about__content {
      flex-direction: column;
@@ -736,13 +812,64 @@ img {
   .about__image {
      margin-top: 2rem;
   }
+} */
+
+/* Who We Are Section */
+.about__content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem; /* Increased gap between text and image */
+  padding: 3rem 0; /* Added padding to make the section taller */
+}
+
+.about__text {
+  flex: 1;
+  font-size: 1.2rem; /* Increased the font size of the text */
+  line-height: 1.8; /* Increased line height for better readability */
+}
+
+.about__image img {
+  max-width: 100%;
+  height: auto;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3); /* Increased shadow for more emphasis */
+  width: 30rem; /* Increased the size of the image */
+  border-radius: 10px;
+  margin-top: 2rem;
+}
+
+/* Section Title */
+.section__title {
+  font-size: 3rem; /* Increased font size of the title */
+  margin-bottom: 3rem; /* Increased the space below the title */
+}
+
+/* Responsive Layout */
+@media screen and (max-width: 768px) {
+  .about__content {
+     flex-direction: column;
+     text-align: center;
+     padding: 2rem 0; /* Reduced padding for smaller screens */
+  }
+
+  .about__image {
+     margin-top: 2rem;
+  }
+
+  .section__title {
+    font-size: 2.5rem; /* Adjusted title size for mobile */
+  }
+
+  .about__text {
+    font-size: 1.1rem; /* Adjusted text size for mobile */
+  }
 }
 
 /* Contact Section */
 .contact {
   background-color: black;
   color: white;
-  padding: 6rem 0 4rem;
+  padding: 4rem 0 2rem;
 }
 
 .contact__container {
@@ -753,7 +880,7 @@ img {
 }
 
 .section__title {
-  margin-bottom: 2rem;
+  margin-bottom: 5rem;
   font-size: 2.5rem;
 }
 
